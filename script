@@ -1,0 +1,14 @@
+import streamlit as st
+
+st.title("Lien vers un dossier Google Drive")
+
+drive_folder_url = "https://drive.google.com/drive/folders/1ULqSEnabBeaFKBw23A7EerDhLGMV_Ev2"
+
+st.markdown(f"Vous pouvez accéder au dossier Google Drive en cliquant [ici]({drive_folder_url})", unsafe_allow_html=True)
+
+st.write("Ou vous pouvez utiliser un bouton :")
+
+if st.button("Accéder au dossier Drive"):
+    js = f"window.open('{drive_folder_url}')"
+    html = '<img src onerror="{}">'.format(js)
+    st.write(html, unsafe_allow_html=True)
